@@ -1131,3 +1131,19 @@
 1741795990 source:c:\users\vinhn\downloads\sdl_project\main.cpp
 	<iostream>
 
+1741801244 source:c:\users\vinhn\downloads\sdl_game_git\src\main.cpp
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	"../include(headerfile)/RenderWindow.hpp"
+
+1741801127 c:\users\vinhn\downloads\sdl_game_git\include(headerfile)\renderwindow.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+
+1741801240 source:c:\users\vinhn\downloads\sdl_game_git\src\renderwindow.cpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+	<iostream>
+	"../include(headerfile)/RenderWindow.hpp"
+

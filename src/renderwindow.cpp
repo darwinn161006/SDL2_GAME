@@ -22,3 +22,29 @@ void RenderWindow::cleanUp()
 {
       SDL_DestroyWindow(window);
 }
+
+SDL_Texture* RenderWindow::loadTexture(const char* p_filePath)
+{
+      SDL_Texture* texture= NULL;
+      texture = IMG_LoadTexture(renderer, p_filePath);
+      if(texture== NULL)
+      {
+            cout<<"Can not load texture. Error: "<<SDL_GetError()<<endl;
+      }
+      return texture;
+}
+
+void RenderWindow::clear()
+{
+      SDL_RenderClear(renderer);
+}
+
+void RenderWindow::render(SDL_Texture* p_text)
+{
+      SDL_RenderCopy(renderer, p_text, NULL, NULL);
+}
+
+void RenderWindow::display()
+{
+      SDL_RenderPresent(renderer);
+}

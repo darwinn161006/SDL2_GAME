@@ -6,6 +6,7 @@ using namespace std;
 
 int main(int argc, char* args[])
 {
+      //Kiểm tra xem có hoạt động bình thường ko
       if(SDL_Init(SDL_INIT_VIDEO)>0)
       {
             cout<<"SDL_Init has failed. Error: "<<SDL_GetError()<<endl;
@@ -16,8 +17,15 @@ int main(int argc, char* args[])
             cout<<"IMG_Init has failed. Error: "<<IMG_GetError()<<endl;
       }
 
+      //Bắt đầu render cửa sổ
       RenderWindow window("DuckRace v1.0", 1280, 720);
 
+
+      //Render background
+      SDL_Texture* grassTexture = window.loadTexture("../res/graphic/background.png");
+
+
+      //Kiểm soát việc xóa cửa sổ
       bool gameRunning= true;
 
       SDL_Event event;
@@ -31,6 +39,9 @@ int main(int argc, char* args[])
                         gameRunning= false;
                   }
             }
+            window.clear();
+            window.render(grassTexture);
+            window.display();
       }
 
 
