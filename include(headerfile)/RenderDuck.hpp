@@ -10,7 +10,7 @@ struct RenderDuck
       void update();
       void render(SDL_Renderer* renderer);
 
-
+      float prevX, prevY;
       float x, y; //Day la vi tri cua DUCK
       int w, h; //Day la kich thuoc cua DUCK
       SDL_Texture* spritesheet; //Day la spritesheet cua DUCK

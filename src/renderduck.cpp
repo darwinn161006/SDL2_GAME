@@ -6,8 +6,9 @@ using namespace std;
 
 RenderDuck::RenderDuck(float p_x, float p_y, int p_w, int p_h, SDL_Texture* p_spritesheet)
     : x(p_x), y(p_y), w(p_w), h(p_h), spritesheet(p_spritesheet), frameIndex(0), frameCount(11),
-      frameTime(100),
-      timeSinceLastFrame(0) {
+      frameTime(120),
+      timeSinceLastFrame(0),
+      prevX(p_x), prevY(p_y) {
     currentFrame = {0, 0, w, h};
 }
 
@@ -41,14 +42,21 @@ void RenderDuck::handleInput(SDL_Event& event)
 
 void RenderDuck::update()
 {
+      static Uint32 lastUpdateTime = SDL_GetTicks();
       Uint32 currentTime = SDL_GetTicks();
-      Uint32 deltaTime = currentTime - timeSinceLastFrame; // Tính thời gian trôi qua
 
-      if (deltaTime >= frameTime) {
-      frameIndex = (frameIndex + 1) % frameCount; // Đảm bảo chạy hết spritesheet rồi lặp lại
-      currentFrame.x = frameIndex * w;  // Lấy vị trí frame tiếp theo trong spritesheet
-      timeSinceLastFrame = currentTime; // Cập nhật thời gian frame cuối cùng được cập nhật
-}
+      // Kiểm tra nếu vịt đang di chuyển
+      bool isMoving = (x != prevX || y != prevY);
+
+      if (isMoving && (currentTime - lastUpdateTime >= frameTime)) {
+        frameIndex = (frameIndex + 1) % frameCount;  // Chuyển frame tiếp theo
+        currentFrame.x = frameIndex * w;            // Cập nhật frame trong spritesheet
+        lastUpdateTime = currentTime;               // Đặt lại thời gian cập nhật
+      }
+
+      // Lưu lại vị trí trước đó để kiểm tra lần tiếp theo
+      prevX = x;
+      prevY = y;
 }
 
 void RenderDuck::render(SDL_Renderer* renderer)
