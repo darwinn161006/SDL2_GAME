@@ -26,7 +26,7 @@ int main(int argc, char* args[])
       SDL_Texture* grassTexture = window.loadTexture("../res/graphic/background.png");
       SDL_Texture* characterSpritesheet = window.loadTexture("../res/graphic/ducksheet.png");
 
-      RenderDuck character(640, 380, 234, 199, characterSpritesheet);
+      RenderDuck character(50, 200, 234, 199, characterSpritesheet);
 
       //Kiểm soát việc xóa cửa sổ
       bool gameRunning= true;

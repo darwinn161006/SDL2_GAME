@@ -1131,7 +1131,7 @@
 1741795990 source:c:\users\vinhn\downloads\sdl_project\main.cpp
 	<iostream>
 
-1742204239 source:c:\users\vinhn\downloads\sdl_game_git\src\main.cpp
+1742205202 source:c:\users\vinhn\downloads\sdl_game_git\src\main.cpp
 	<iostream>
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
@@ -1152,7 +1152,7 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1742204063 source:c:\users\vinhn\downloads\sdl_game_git\src\renderduck.cpp
+1742205694 source:c:\users\vinhn\downloads\sdl_game_git\src\renderduck.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<iostream>

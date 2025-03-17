@@ -14,16 +14,26 @@ RenderDuck::RenderDuck(float p_x, float p_y, int p_w, int p_h, SDL_Texture* p_sp
 
 void RenderDuck::handleInput(SDL_Event& event)
 {
+      const int screenHeight = 720; // Kích thước màn hình
+      int y_min = screenHeight * (1.0 / 8.0);
+      int y_max = screenHeight - h; // Đáy màn hình trừ chiều cao vịt
+
       if(event.type== SDL_KEYDOWN)
       {
             switch(event.key.keysym.sym)
             {
                   case SDLK_UP:
-                  y-= 10;
+                        if(y- 10>= y_min)
+                        {
+                           y-= 10;
+                        }
                   break;
 
                   case SDLK_DOWN:
-                  y+= 10;
+                        if(y+10<=y_max)
+                        {
+                              y+= 10;
+                        }
                   break;
             }
       }
@@ -32,12 +42,12 @@ void RenderDuck::handleInput(SDL_Event& event)
 void RenderDuck::update()
 {
       Uint32 currentTime = SDL_GetTicks();
-    Uint32 deltaTime = currentTime - timeSinceLastFrame; // Tính thời gian trôi qua
+      Uint32 deltaTime = currentTime - timeSinceLastFrame; // Tính thời gian trôi qua
 
-    if (deltaTime >= frameTime) {
-        frameIndex = (frameIndex + 1) % frameCount; // Đảm bảo chạy hết spritesheet rồi lặp lại
-        currentFrame.x = frameIndex * w;  // Lấy vị trí frame tiếp theo trong spritesheet
-        timeSinceLastFrame = currentTime; // Cập nhật thời gian frame cuối cùng được cập nhật
+      if (deltaTime >= frameTime) {
+      frameIndex = (frameIndex + 1) % frameCount; // Đảm bảo chạy hết spritesheet rồi lặp lại
+      currentFrame.x = frameIndex * w;  // Lấy vị trí frame tiếp theo trong spritesheet
+      timeSinceLastFrame = currentTime; // Cập nhật thời gian frame cuối cùng được cập nhật
 }
 }
 
