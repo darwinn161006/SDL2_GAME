@@ -2,6 +2,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include "../include(headerfile)/RenderWindow.hpp"
+#include "../include(headerfile)/RenderDuck.hpp"
 using namespace std;
 
 int main(int argc, char* args[])
@@ -23,7 +24,9 @@ int main(int argc, char* args[])
 
       //Render background
       SDL_Texture* grassTexture = window.loadTexture("../res/graphic/background.png");
+      SDL_Texture* characterSpritesheet = window.loadTexture("../res/graphic/ducksheet.png");
 
+      RenderDuck character(640, 380, 234, 199, characterSpritesheet);
 
       //Kiểm soát việc xóa cửa sổ
       bool gameRunning= true;
@@ -38,9 +41,13 @@ int main(int argc, char* args[])
                   {
                         gameRunning= false;
                   }
+                  character.handleInput(event);
             }
+            character.update();
             window.clear();
             window.render(grassTexture);
+            character.render(window.renderer);
+
             window.display();
       }
 

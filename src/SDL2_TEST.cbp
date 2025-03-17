@@ -47,8 +47,12 @@
 			<Add directory="../../../Documents/sdl2/SDL2-devel-2.0.5-mingw/SDL2-2.0.5/x86_64-w64-mingw32/lib" />
 			<Add directory="../../../Documents/sdl2/SDL2_image-devel-2.8.5-mingw/SDL2_image-2.8.5/x86_64-w64-mingw32/lib" />
 		</Linker>
+		<Unit filename="../include(headerfile)/RenderDuck.hpp" />
 		<Unit filename="../include(headerfile)/RenderWindow.hpp" />
+		<Unit filename="../res/graphic/background.png" />
+		<Unit filename="../res/graphic/ducksheet.png" />
 		<Unit filename="main.cpp" />
+		<Unit filename="renderduck.cpp" />
 		<Unit filename="renderwindow.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
