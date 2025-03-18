@@ -2,7 +2,7 @@
 #include <iostream>
 
 RenderObstacle::RenderObstacle(float p_x, float p_y, int p_size, SDL_Renderer* p_renderer)
-    : x(p_x), y(p_y), size(p_size), speed(0.2f), renderer(p_renderer)  // Khởi tạo các giá trị ban đầu
+    : x(p_x), y(p_y), size(p_size), speed(0.15f), renderer(p_renderer)  // Khởi tạo các giá trị ban đầu
 {
     // Tải ảnh chướng ngại vật từ file PNG
     texture = IMG_LoadTexture(renderer, "../res/graphic/obstacle.png");  // Sử dụng renderer từ đối tượng

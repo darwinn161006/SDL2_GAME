@@ -3,7 +3,7 @@
 #include <SDL2/SDL_image.h>
 #include "../include(headerfile)/RenderWindow.hpp"
 #include "../include(headerfile)/RenderDuck.hpp"
-#include "../include(headerfile)/RenderObstacle.hpp" // Bao gồm file RenderObstacle.hpp
+#include "../include(headerfile)/RenderObstacle.hpp"
 using namespace std;
 
 int main(int argc, char* args[])
@@ -29,11 +29,10 @@ int main(int argc, char* args[])
     SDL_Texture* characterSpritesheet = window.loadTexture("../res/graphic/ducksheet.png");
 
     // Tạo nhân vật với kích thước nhỏ hơn (ví dụ 117x100)
-    RenderDuck character = {50, 200, 234, 199, characterSpritesheet};  // Kích thước nhỏ hơn
+    RenderDuck character = {50, 200, 234, 199, characterSpritesheet};
 
     // Tạo chướng ngại vật với kích thước lớn hơn (ví dụ 100x100)
-    RenderObstacle obstacle = {1280, rand() % (720 - 200), 200, window.renderer};  // Kích thước chướng ngại vật là 100x100
-
+    RenderObstacle obstacle = {1280, rand() % (720 - 150), 150, window.renderer};
     bool gameRunning = true;
     SDL_Event event;
 
