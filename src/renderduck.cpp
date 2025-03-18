@@ -24,16 +24,16 @@ void RenderDuck::handleInput(SDL_Event& event)
             switch(event.key.keysym.sym)
             {
                   case SDLK_UP:
-                        if(y- 10>= y_min)
+                        if(y- 100>= y_min)
                         {
-                           y-= 10;
+                           y-= 100;
                         }
                   break;
 
                   case SDLK_DOWN:
-                        if(y+10<=y_max)
+                        if(y+100<=y_max)
                         {
-                              y+= 10;
+                              y+= 100;
                         }
                   break;
             }
