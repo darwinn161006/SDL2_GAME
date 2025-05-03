@@ -4,20 +4,22 @@
 
 struct RenderDuck
 {
+    RenderDuck(float p_x, float p_y, int p_w, int p_h, SDL_Texture* p_spritesheet, int p_hitbox_margin = 20);
+    void handleInput(SDL_Event& event, bool isPlayerTwo);
+    void update();
+    void render(SDL_Renderer* renderer);
 
-      RenderDuck(float p_x, float p_y, int p_w, int p_h, SDL_Texture* p_spritesheet);
-      void handleInput(SDL_Event& event);
-      void update();
-      void render(SDL_Renderer* renderer);
+    SDL_Rect getHitbox() const;
 
-      float prevX, prevY;
-      float x, y; //Day la vi tri cua DUCK
-      int w, h; //Day la kich thuoc cua DUCK
-      SDL_Texture* spritesheet; //Day la spritesheet cua DUCK
-      SDL_Rect currentFrame; //Frame hien tai cua nhan vat
-      int frameIndex; //Chi so frame hien tai
-      int frameCount; //Tong so frame hien co
-      int frameTime;
-      int timeSinceLastFrame;
+    float prevX, prevY;
+    float x, y;
+    int w, h;
+    SDL_Texture* spritesheet;
+    SDL_Rect currentFrame;
+    int frameIndex;
+    int frameCount;
+    int frameTime;
+    int timeSinceLastFrame;
+    void reset(float newX, float newY);
+    int hitbox_margin;
 };
-
