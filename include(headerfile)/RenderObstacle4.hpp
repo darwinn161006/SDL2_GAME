@@ -1,0 +1,25 @@
+#pragma once
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+
+class RenderObstacle4 {
+public:
+    RenderObstacle4(float p_x, float p_y, int p_size, SDL_Renderer* p_renderer);
+    ~RenderObstacle4();
+
+    void update();
+    void render();
+    bool checkCollision(float characterX, float characterY, int characterW, int characterH);
+    void reset(float p_x, float p_y);
+    float x, y;
+
+private:
+
+    int size;
+    float baseSpeed;
+    int spawnCount;
+    Uint32 spawnTime;
+
+    SDL_Texture* texture;
+    SDL_Renderer* renderer;
+};
