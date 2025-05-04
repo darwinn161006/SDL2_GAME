@@ -2,7 +2,7 @@
 #include <iostream>
 
 RenderObstacle3::RenderObstacle3(float p_x, float p_y, int p_size, SDL_Renderer* p_renderer)
-    : x(p_x), y(p_y), size(p_size), baseSpeed(0.01f), renderer(p_renderer), spawnCount(0) {
+    : x(p_x), y(p_y), size(p_size), baseSpeed(0.02f), renderer(p_renderer), spawnCount(0) {
     spawnTime = SDL_GetTicks();
     texture = IMG_LoadTexture(renderer, "../res/graphic/obstacle3.png");
     if (!texture) {
@@ -26,7 +26,7 @@ void RenderObstacle3::update() {
 
         spawnCount++;
         if (spawnCount % 3 == 0) {
-            baseSpeed += 0.01f;
+            baseSpeed += 0.02f;
             std::cout << "RenderObstacle3 speed increased to: " << baseSpeed << std::endl;
         }
     }
@@ -51,6 +51,6 @@ void RenderObstacle3::reset(float p_x, float p_y) {
     y = p_y;
     spawnTime = SDL_GetTicks();
     spawnCount = 0;
-    baseSpeed = 0.01f;
+    baseSpeed = 0.02f;
     std::cout << "RenderObstacle3 has been reset to position (" << x << ", " << y << ")." << std::endl;
 }
