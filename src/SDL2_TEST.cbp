@@ -88,6 +88,7 @@
 		<Unit filename="../res/graphic/quit_button.png" />
 		<Unit filename="../res/graphic/start_button.png" />
 		<Unit filename="../res/graphic/title.png" />
+		<Unit filename="../res/pause.png" />
 		<Unit filename="GameMenu.cpp" />
 		<Unit filename="Timer.cpp" />
 		<Unit filename="main.cpp" />

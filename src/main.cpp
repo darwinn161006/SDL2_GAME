@@ -259,6 +259,9 @@ int main(int argc, char* args[]) {
                     Mix_HaltMusic();
                     Mix_PlayMusic(gameOverMusic, -1);
                     isGameOverMusicPlaying = true;
+
+                    gameTimer.stop();
+                    cout << "Both players crashed! Timer stopped." << endl;
                 }
                 cout << "Game Over!" << endl;
                 currentState = GAME_OVER;
