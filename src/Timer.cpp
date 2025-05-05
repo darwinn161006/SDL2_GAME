@@ -4,7 +4,7 @@
 #include <SDL2/SDL_image.h>
 
 Timer::Timer(SDL_Renderer* renderer)
-    : renderer(renderer), startTime(0), endTime(0), stopped(false) {
+    : renderer(renderer), startTime(0), endTime(0), stopped(false), pausedTime(0), paused(false), totalPausedTime(0) {
     loadDigitTextures();
 }
 
@@ -15,6 +15,8 @@ Timer::~Timer() {
 void Timer::start() {
     startTime = SDL_GetTicks();
     stopped = false;
+    paused = false;
+    totalPausedTime = 0;
 }
 
 void Timer::stop() {
@@ -24,15 +26,42 @@ void Timer::stop() {
     }
 }
 
+void Timer::pause() {
+    if (!stopped && !paused) {
+        pausedTime = SDL_GetTicks();
+        paused = true;
+    }
+}
+
+void Timer::unpause() {
+    if (paused) {
+        totalPausedTime += (SDL_GetTicks() - pausedTime);
+        paused = false;
+    }
+}
+
+bool Timer::isPaused() {
+    return paused;
+}
+
 void Timer::update() {
 
 }
 
 void Timer::render(int x, int y) {
-    Uint32 timeToShow = stopped ? (endTime - startTime) : (SDL_GetTicks() - startTime);
-    std::string timeText = formatTime(timeToShow);
+    Uint32 timeToShow;
 
+    if (stopped) {
+        timeToShow = endTime - startTime;
+    } else if (paused) {
+        timeToShow = pausedTime - startTime - totalPausedTime;
+    } else {
+        timeToShow = SDL_GetTicks() - startTime - totalPausedTime;
+    }
+
+    std::string timeText = formatTime(timeToShow);
     int offsetX = 0;
+
     for (char c : timeText) {
         if (c >= '0' && c <= '9') {
             int digit = c - '0';
@@ -72,7 +101,6 @@ void Timer::renderDigit(int digit, int x, int y) {
     if (digit < 0 || digit > 9 || !digitTextures[digit]) {
         return;
     }
-
     SDL_Rect destRect = {x, y, 60, 90};
     SDL_RenderCopy(renderer, digitTextures[digit], nullptr, &destRect);
 }

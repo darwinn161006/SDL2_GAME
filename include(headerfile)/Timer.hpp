@@ -1,7 +1,6 @@
-#pragma once
 #include <SDL2/SDL.h>
-#include <string>
 #include <vector>
+#include <string>
 
 class Timer {
 public:
@@ -9,25 +8,25 @@ public:
     ~Timer();
 
     void start();
+    void stop();
+    void pause();
+    void unpause();
+    bool isPaused();
     void update();
     void render(int x, int y);
-    void stop();
-    void reset();
-    bool isStopped() const;
 
 private:
     SDL_Renderer* renderer;
-    std::vector<SDL_Texture*> digitTextures;
-    SDL_Texture* colonTexture;
-
     Uint32 startTime;
     Uint32 endTime;
+    Uint32 pausedTime;
+    Uint32 totalPausedTime;
     bool stopped;
+    bool paused;
+    std::vector<SDL_Texture*> digitTextures;
 
     void loadDigitTextures();
     void unloadDigitTextures();
-    void loadColonTexture();
-    void unloadColonTexture();
     void renderDigit(int digit, int x, int y);
     std::string formatTime(Uint32 time);
 };

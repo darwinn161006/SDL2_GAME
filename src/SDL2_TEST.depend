@@ -1131,7 +1131,7 @@
 1741795990 source:c:\users\vinhn\downloads\sdl_project\main.cpp
 	<iostream>
 
-1746339341 source:c:\users\vinhn\downloads\sdl_game_git\src\main.cpp
+1746445410 source:c:\users\vinhn\downloads\sdl_game_git\src\main.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL_mixer.h>
@@ -1145,6 +1145,7 @@
 	"../include(headerfile)/RenderObstacle3.hpp"
 	"../include(headerfile)/RenderObstacle4.hpp"
 	"../include(headerfile)/RenderObstacle5.hpp"
+	"../include(headerfile)/RenderObstacle6.hpp"
 	"../include(headerfile)/GameMenu.hpp"
 	"../include(headerfile)/Timer.hpp"
 	"../include(headerfile)/Point.hpp"
@@ -1163,7 +1164,7 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1746287355 source:c:\users\vinhn\downloads\sdl_game_git\src\renderduck.cpp
+1746406170 source:c:\users\vinhn\downloads\sdl_game_git\src\renderduck.cpp
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 	<iostream>
@@ -1173,7 +1174,7 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1746362820 source:c:\users\vinhn\downloads\sdl_game_git\src\renderobstacle.cpp
+1746406170 source:c:\users\vinhn\downloads\sdl_game_git\src\renderobstacle.cpp
 	"../include(headerfile)/RenderObstacle.hpp"
 	<iostream>
 
@@ -1196,10 +1197,10 @@
 	<vector>
 	<string>
 
-1746262260 c:\users\vinhn\downloads\sdl_game_git\include(headerfile)\timer.hpp
+1746445311 c:\users\vinhn\downloads\sdl_game_git\include(headerfile)\timer.hpp
 	<SDL2/SDL.h>
-	<string>
 	<vector>
+	<string>
 
 1746287240 c:\users\vinhn\downloads\sdl_game_git\include(headerfile)\point.hpp
 	<SDL2/SDL.h>
@@ -1224,19 +1225,19 @@
 	<SDL2/SDL_image.h>
 	<iostream>
 
-1746362820 source:c:\users\vinhn\downloads\sdl_game_git\src\renderobstacle2.cpp
+1746406170 source:c:\users\vinhn\downloads\sdl_game_git\src\renderobstacle2.cpp
 	"../include(headerfile)/RenderObstacle2.hpp"
 	<iostream>
 
-1746362820 source:c:\users\vinhn\downloads\sdl_game_git\src\renderobstacle3.cpp
+1746406170 source:c:\users\vinhn\downloads\sdl_game_git\src\renderobstacle3.cpp
 	"../include(headerfile)/RenderObstacle3.hpp"
 	<iostream>
 
-1746362820 source:c:\users\vinhn\downloads\sdl_game_git\src\renderobstacle4.cpp
+1746406170 source:c:\users\vinhn\downloads\sdl_game_git\src\renderobstacle4.cpp
 	"../include(headerfile)/RenderObstacle4.hpp"
 	<iostream>
 
-1746256377 source:c:\users\vinhn\downloads\sdl_game_git\src\timer.cpp
+1746445368 source:c:\users\vinhn\downloads\sdl_game_git\src\timer.cpp
 	"../include(headerfile)/Timer.hpp"
 	<iostream>
 	<sstream>
@@ -1246,7 +1247,15 @@
 	<SDL2/SDL.h>
 	<SDL2/SDL_image.h>
 
-1746362820 source:c:\users\vinhn\downloads\sdl_game_git\src\renderobstacle5.cpp
+1746406170 source:c:\users\vinhn\downloads\sdl_game_git\src\renderobstacle5.cpp
 	"../include(headerfile)/RenderObstacle5.hpp"
+	<iostream>
+
+1746405771 c:\users\vinhn\downloads\sdl_game_git\include(headerfile)\renderobstacle6.hpp
+	<SDL2/SDL.h>
+	<SDL2/SDL_image.h>
+
+1746406170 source:c:\users\vinhn\downloads\sdl_game_git\src\renderobstacle6.cpp
+	"../include(headerfile)/RenderObstacle6.hpp"
 	<iostream>
 

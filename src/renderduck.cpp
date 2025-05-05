@@ -80,7 +80,6 @@ void RenderDuck::handleInput(SDL_Event& event, bool isPlayerTwo) {
 void RenderDuck::update() {
     Uint32 currentTime = SDL_GetTicks();
 
-    // Update the animation frame if enough time has passed
     if (currentTime - timeSinceLastFrame >= frameTime) {
         frameIndex = (frameIndex + 1) % frameCount;
         currentFrame.x = frameIndex * w;
@@ -103,8 +102,8 @@ SDL_Rect RenderDuck::getHitbox() const {
     return {
         static_cast<int>(x) + hitbox_margin,
         static_cast<int>(y) + hitbox_margin,
-        static_cast<int>(w) - 2 * hitbox_margin,
-        static_cast<int>(h) - 2 * hitbox_margin
+        static_cast<int>(w) - 3 * hitbox_margin,
+        static_cast<int>(h) - 3 * hitbox_margin
     };
 }
 

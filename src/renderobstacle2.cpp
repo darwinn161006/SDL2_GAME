@@ -33,7 +33,7 @@ void RenderObstacle2::update() {
 
         spawnCount++;
         if (spawnCount % 3 == 0) {
-            baseSpeed += 0.02f;
+            baseSpeed += 0.01f;
             std::cout << "RenderObstacle2 speed increased to: " << baseSpeed << std::endl;
         }
     }
